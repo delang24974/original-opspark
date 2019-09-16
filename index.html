@@ -2,20 +2,91 @@
 <html>
     <head>
         <title>Blue dyce</title>
+        <style>
+    body {
+        background: rgb(125, 198, 205);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: Georgia;
+    }
+    header {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(239, 80, 41);
+        margin: 0 auto;
+        display: flex;
+        padding: 10px;
+    }
+    nav header {
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        flex: 1;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    .interests header {
+        font-size: 1.25em;
+    }
+</style>
     </head>
     <body>
         <div id="all-contents">
          <nav>
+            
          </nav>
          <main>
             <div class="sidebar">
-             <img>https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.imgur.com%2FOoKISiw.jpg&imgrefurl=https%3A%2F%2Fimgur.com%2Fgallery%2FgWbO1&docid=nFVElgPTwIYalM&tbnid=QFTUa5FhVjdSaM%3A&vet=10ahUKEwidpNaD6cTkAhUjT98KHbqvA0gQMwhTKAYwBg..i&w=258&h=195&safe=strict&client=firefox-b-1-e&bih=607&biw=1280&q=small%20spongebob%20meme&ved=0ahUKEwidpNaD6cTkAhUjT98KHbqvA0gQMwhTKAYwBg&iact=mrc&uact=8
-             </img>
+             <img src="https://images-na.ssl-images-amazon.com/images/I/51cL8YB4aYL.jpg"</img>
            </div>
             <div class="content">
                 <header> Destini Lang
                 </header>
-                <p> Rpcc student/ EAHS <P>
+                <p> Rpcc student/ EAHS </p>
+                <section class="interests">
+                    <header> interest
+                    </header>
+                    <ul> 
+                        <li> steven universe</li>
+                        <li> rick and morty</li>
+                         <li>scream tv show</li>
+                    </ul>
+                </section>
+                
             </div>
          </main>
         </div>      
