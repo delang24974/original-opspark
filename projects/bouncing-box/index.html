@@ -21,6 +21,9 @@
 			top: 100px;
 			left: 0px;
 		}
+		body {
+		    background-image: url(https://timedotcom.files.wordpress.com/2019/08/caveman-spongebob-spongegar.png)
+		}
 	</style>
 
 </head>
@@ -62,9 +65,9 @@
                    console.log(direction);
                 }
             
-                if(position > boardWidth) {
+                if(position < 0) {
                    console.log("Left Wall Hit");
-                   direction = -1;
+                   direction = 1;
                    console.log(direction);
                 }
 
