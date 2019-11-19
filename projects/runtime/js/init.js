@@ -36,7 +36,7 @@ var init = function (window) {
     view.addChild(background);
    
     
-    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q your mom!', 
+    var help = draw.textfield('cOpYrIghT @ SpOnGeBobs WiFe', 
         '20px Arial',
         '#ccc', 'left');
     help.x = 10;
@@ -79,7 +79,8 @@ var init = function (window) {
 
     // TODO 6 : create game manager
 
-
+    var game = opspark.createGameManager(app,hud);  
+    opspark.runLevelInGame(game);
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
