@@ -18,31 +18,42 @@ var level01 = function (window) {
             gameItems: [
                 {type: 'sawblade',x:400,y:groundY},
                 {type: 'sawblade',x:600,y:groundY},
-                {type: 'sawblade',x:900,y:groundY}
+                {type: 'sawblade',x:900,y:groundY},
+                {type: 'sawblade',x:800,y:groundY},
+                {type: 'sawblade',x:500,y:groundY}
             ]
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(false);
 
-        //{ BEGIN EDITING YOUR CODE HERE
-      function createSawBlade(x,y) {
-         var hitZoneSize = 25;
-        var damageFromObstacle = 10;
-        var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
-        myObstacle.x = 400;
-        myObstacle.y = 250;
-        game.addGameItem(myObstacle); 
-        var obstacleImage = draw.bitmap('img/sawblade.png');
-        myObstacle.addChild(obstacleImage);
-        myObstacle.addChild(obstacleImage); 
-        obstacleImage.x = -25;
-        obstacleImage.y = -25;
-       
-       
-            // your code goes here
+        // BEGIN EDITING YOUR CODE HERE
+             
+        for (var i = 0; i < levelData.gameItems.length; i++)  {
+            var gameItem = levelData.gameItems[i];
+            createSawBlade(gameItem.x, gameItem.y);   
         }
-    }
+         
+        function createSawBlade(x,y){
+             var hitZoneSize = 25;
+             var damageFromObstacle = 10;
+             var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
+             myObstacle.x =x;
+             myObstacle.y = y;
+             game.addGameItem(myObstacle); 
+             var obstacleImage = draw.bitmap('img/sawblade.png');
+             myObstacle.addChild(obstacleImage);
+             myObstacle.addChild(obstacleImage); 
+             obstacleImage.x = -25;
+             obstacleImage.y = -25;    
+          } 
+      
+          function createBox(x,y){
+               
+                
+        
+         }
+     }
 
 };
 
