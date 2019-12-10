@@ -1,56 +1,77 @@
 var init = function (window) {
     'use strict';
-    var 
+    var
         draw = window.opspark.draw,
         physikz = window.opspark.racket.physikz,
-        
+
         app = window.opspark.makeApp(),
-        canvas = app.canvas, 
+        canvas = app.canvas,
         view = app.view,
         fps = draw.fps('#000');
-        
-    
+
+
     window.opspark.makeGame = function() {
-        
+
         window.opspark.game = {};
         var game = window.opspark.game;
-        
+
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
-        
+
         // TODO 1 : Declare and initialize our variables
+        var circle;
+        var circles = [];
+
+        // TODO 2 : Create a function that draws a circle
+        function drawCircle() {
+            // TODO 2: Draw a circle //
+            circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+            physikz.addRandomVelocity(circle, canvas);
+            view.addChild(circle);
+            circles.push(circle);
+            randomCircleInArea(area, randomizeAlpha, addCross, borderColor, borderThickness, randomRadialProps)
+        }
+        // TODO 3 / 7 : Call the drawCircle() function
+
+         var counter = 0;
+          while (counter < 100) {
+        drawCircle()
+        counter++
+                    }
+      view.addChild(fps);
+      app.addUpdateable(fps);
+      game.checkCirclePosition = function(circle) {
 
 
-        // TODO 2 : Create a function that draws a circle 
-        
 
-        // TODO 3 / 7 : Call the drawCircle() function 
 
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
-        
-        /* 
+
+        /*
         This Function is called 60 times/second producing 60 frames/second.
         In each frame, for every circle, it should redraw that circle
-        and check to see if it has drifted off the screen.         
+        and check to see if it has drifted off the screen.
         */
         function update() {
             // TODO 4 : Update the circle's position //
+            physikz.updatePosition(circles[0]);
 
-            
+
+
             // TODO 5 : Call game.checkCirclePosition() on your circles.
-           
+
 
             // TODO 8 : Iterate over the array
-           
-            
+
+
         }
-    
-        /* 
-        This Function should check the position of a circle that is passed to the 
+
+        /*
+        This Function should check the position of a circle that is passed to the
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
@@ -60,26 +81,26 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            
+
             // TODO 5 : YOUR CODE STARTS HERE //////////////////////
-            
+
 
 
             // YOUR TODO 5 CODE ENDS HERE //////////////////////////
         }
-        
+
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
         /////////////////////////////////////////////////////////////
-        
+
         view.addChild(fps);
         app.addUpdateable(fps);
-        
+
         game.circle = circle;
         game.circles = circles;
         game.drawCircle = drawCircle;
         game.update = update;
-        
+
         app.addUpdateable(window.opspark.game);
     }
 };
